@@ -1,7 +1,4 @@
------------------------------------------------------------------------------------------
---
--- main.lua
---
------------------------------------------------------------------------------------------
-
--- Your code here
+-- Title: MovingImages
+-- Name: Valeria Veverita
+-- Course: ICS2O
+-- This program displays images that can be touched an ddragged around on the sreen
