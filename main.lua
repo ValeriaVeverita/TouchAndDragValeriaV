@@ -3,9 +3,20 @@
 -- Course: ICS2O
 -- This program displays images that can be touched an ddragged around on the sreen
 
-
 --hide the status bar
 display.setStatusBar(display.HiddenStatusBar)
+
+--create the sound
+local num0Sound = audio.loadStream("Sounds/number0.mp3")
+local num1Sound = audio.loadStream("Sounds/number1.mp3")
+local num2Sound = audio.loadStream("Sounds/number2.mp3")
+local num3Sound = audio.loadStream("Sounds/number3.mp3")
+local num4Sound = audio.loadStream("Sounds/number4.mp3")
+local num5Sound = audio.loadStream("Sounds/number5.mp3")
+local num6Sound = audio.loadStream("Sounds/number6.mp3")
+local num7Sound = audio.loadStream("Sounds/number7.mp3")
+local num8Sound = audio.loadStream("Sounds/number8.mp3")
+local num9Sound = audio.loadStream("Sounds/number9.mp3")
 
 -- local variables
 local backgroundImage = display.newImageRect("Images/MathBackground.jpg", 2048, 1536)
@@ -89,14 +100,16 @@ number8.y = 700
 
 number9.x = 780
 number9.y = 700
+
 --Funtion:ZeroListener
 --Input:touch listener
 --Output: none
---Description:when number0 is touched, move it
+--Description:when number0 is touched, move it and play the sound
 local function ZeroListener (touch)
 	if(touch.phase == "began") then
 		if ((touchedNumber1 == false)and(touchedNumber2 == false) and (touchedNumber3 == false) and (touchedNumber4 == false) and (touchedNumber5 == false) and (touchedNumber6 == false) and (touchedNumber7 == false) and (touchedNumber8 == false) and (touchedNumber9 == false)) then
 		    touchedNumber0 = true
+        local num0Channel = audio.play(num0Sound)
 		end
     end
 
@@ -125,11 +138,12 @@ number0:addEventListener("touch", ZeroListener)
 --Funtion:OneListener
 --Input:touch listener
 --Output: none
---Description:when number1 is touched, move it
+--Description:when number1 is touched, move it and play the sound
 local function OneListener (touch)
 	if(touch.phase == "began") then
 		if ((touchedNumber0 == false) and (touchedNumber2 == false) and (touchedNumber3 == false) and (touchedNumber4 == false) and (touchedNumber5 == false) and (touchedNumber6 == false) and (touchedNumber7 == false) and (touchedNumber8 == false) and (touchedNumber9 == false)) then
 		    touchedNumber1 = true
+        local num1Channel = audio.play(num1Sound)
 		end
   end
 
@@ -158,12 +172,13 @@ number1:addEventListener("touch",OneListener)
 --Function:TwoTouched
 --Input: touch listener
 --Output: change the direction of the number
---Description: when number 2 is touched, move it
+--Description: when number 2 is touched, move it and play the sound
 
 local function TwoListener (touch)
   if(touch.phase == "began") then
     if ((touchedNumber0 == false) and (touchedNumber1 == false) and (touchedNumber3 == false) and (touchedNumber4 == false) and (touchedNumber5 == false) and (touchedNumber6 == false) and (touchedNumber7 == false) and (touchedNumber8 == false) and (touchedNumber9 == false)) then
          touchedNumber2 = true
+         local num2Channel = audio.play(num2Sound)
     end
   end
 
@@ -192,12 +207,13 @@ number2:addEventListener("touch",TwoListener)
 --Function:ThreeListener
 --Input:Touch the object
 --Output:Change the direction of the object
---Description:When number 3 is touched, change its possition
+--Description:When number 3 is touched, change its possition and play the sound
 
 local function ThreeListener( touch )
   if (touch.phase=="began") then
     if ((touchedNumber0==false)and(touchedNumber1==false)and(touchedNumber2==false)and(touchedNumber4==false)and(touchedNumber5==false)and(touchedNumber6==false)and(touchedNumber7==false)and(touchedNumber8==false)and(touchedNumber9==false))then
        touchedNumber3 = true
+       local num3Channel = audio.play(num3Sound)
     end
   end
 
@@ -226,12 +242,13 @@ number3:addEventListener("touch", ThreeListener)
 --Function:FourListener
 --Input:Touch the object
 --Output:Change the direction of the object
---Description:When number 4 is touched, change its possition
+--Description:When number 4 is touched, change its possition and play the sound
 
 local function FourListener( touch )
   if (touch.phase=="began") then
     if ((touchedNumber0==false)and(touchedNumber1==false)and(touchedNumber2==false)and(touchedNumber3==false)and(touchedNumber5==false)and(touchedNumber6==false)and(touchedNumber7==false)and(touchedNumber8==false)and(touchedNumber9==false))then
       touchedNumber4 = true
+      local num4Channel = audio.play(num4Sound)
     end
   end
 
@@ -260,12 +277,13 @@ number4:addEventListener("touch", FourListener)
 --Function:FiveListener
 --Input:Touch the object
 --Output:Change the direction of the object
---Description:When number 5 is touched, change its possition
+--Description:When number 5 is touched, change its possition and play the sound
 
 local function FiveListener( touch )
   if (touch.phase=="began") then
     if ((touchedNumber0==false)and(touchedNumber1==false)and(touchedNumber2==false)and(touchedNumber4==false)and(touchedNumber3==false)and(touchedNumber6==false)and(touchedNumber7==false)and(touchedNumber8==false)and(touchedNumber9==false))then
       touchedNumber5 = true
+      local num5Channel = audio.play(num5Sound)
     end
   end
 
@@ -294,12 +312,12 @@ number5:addEventListener("touch", FiveListener)
 --Function:SixListener
 --Input:Touch the object
 --Output:Change the direction of the object
---Description:When number 6 is touched, change its possition
-
+--Description:When number 6 is touched, change its possition andplay the sound
 local function SixListener( touch )
   if (touch.phase=="began") then
     if ((touchedNumber0==false)and(touchedNumber1==false)and(touchedNumber2==false)and(touchedNumber4==false)and(touchedNumber3==false)and(touchedNumber5==false)and(touchedNumber7==false)and(touchedNumber8==false)and(touchedNumber9==false))then
       touchedNumber6 = true
+      local num6Channel = audio.play(num6Sound)
     end
   end
 
@@ -328,12 +346,13 @@ number6:addEventListener("touch", SixListener)
 --Function:SevenListener
 --Input:Touch the object
 --Output:Change the direction of the object
---Description:When number 7 is touched, change its possition
+--Description:When number 7 is touched, change its possition and play the sound
 
 local function SevenListener( touch )
   if (touch.phase=="began") then
     if ((touchedNumber0==false)and(touchedNumber1==false)and(touchedNumber2==false)and(touchedNumber4==false)and(touchedNumber3==false)and(touchedNumber5==false)and(touchedNumber6==false)and(touchedNumber8==false)and(touchedNumber9==false))then
       touchedNumber7 = true
+      local num7Channel = audio.play(num7Sound)
     end
   end
 
@@ -362,12 +381,13 @@ number7:addEventListener("touch", SevenListener)
 --Function:EightListener
 --Input:Touch the object
 --Output:Change the direction of the object
---Description:When number 8 is touched, change its possition
+--Description:When number 8 is touched, change its possition and play the sound
 
 local function EightListener( touch )
   if (touch.phase=="began") then
     if ((touchedNumber0==false)and(touchedNumber1==false)and(touchedNumber2==false)and(touchedNumber4==false)and(touchedNumber3==false)and(touchedNumber5==false)and(touchedNumber7==false)and(touchedNumber6==false)and(touchedNumber9==false))then
       touchedNumber8 = true
+      local num8Channel = audio.play(num8Sound)
     end
   end
 
@@ -396,12 +416,13 @@ number8:addEventListener("touch", EightListener)
 --Function:NineListener
 --Input:Touch the object
 --Output:Change the direction of the object
---Description:When number 9 is touched, change its possition
+--Description:When number 9 is touched, change its possitionand play the sound
 
 local function NineListener( touch )
   if (touch.phase=="began") then
     if ((touchedNumber0==false)and(touchedNumber1==false)and(touchedNumber2==false)and(touchedNumber4==false)and(touchedNumber3==false)and(touchedNumber5==false)and(touchedNumber7==false)and(touchedNumber6==false)and(touchedNumber8==false))then
       touchedNumber9 = true
+      local num9Channel = audio.play(num9Sound)
     end
   end
 
